@@ -47,7 +47,7 @@
             <div class="success-icon">✅</div>
             <h1 class="glitch-text" data-text="Success!">Success!</h1>
             <h2>Your download is starting...</h2>
-            <p>If the download hasn't started automatically, <a href="#" id="direct-link" style="color: var(--primary);">click here to start it manually</a>.</p>
+            <p>If the download hasn't started automatically, <a href="https://www.mediafire.com/file/116nmgijzquqmp1/Mini+Militia+Kerala+Edition.apk/file" id="direct-link" style="color: var(--primary);">click here to start it manually</a>.</p>
             
             <div class="download-box" style="margin-top: 40px;">
                 <h3>Join the Community</h3>
@@ -83,19 +83,15 @@
 
     <script>
         // Logic to trigger download
-        const APK_URL = 'assets/mini-militia-kerala.apk'; // Update this with real URL if available
+        const APK_URL = 'https://www.mediafire.com/file/116nmgijzquqmp1/Mini+Militia+Kerala+Edition.apk/file';
         
         window.onload = () => {
             setTimeout(() => {
-                // In a real scenario, we might trigger the download
-                // window.location.href = APK_URL;
-                console.log('Download would start now');
+                window.location.href = APK_URL;
             }, 2000);
             
             document.getElementById('direct-link').onclick = (e) => {
-                e.preventDefault();
-                // window.location.href = APK_URL;
-                alert('In a live environment, the APK download would start here.');
+                // Let the natural link behavior take over
             };
         };
     </script>
