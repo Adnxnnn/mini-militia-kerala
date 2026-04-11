@@ -159,17 +159,21 @@ h2 {
     transition: all 0.3s ease;
 }
 
-.btn-primary {
-    background: var(--primary);
-    color: var(--bg-dark);
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
-    border: 2px solid transparent;
+.btn-muted {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-muted);
+}
+
+.btn-muted:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(0, 229, 255, 0.05);
 }
 
 .hero-main-btn {
-    font-size: 1.4rem; /* Making it larger for visibility */
-    padding: 18px 45px;
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+    font-size: 1.1rem;
+    padding: 15px 35px;
 }
 
 .hero-actions {
@@ -249,6 +253,10 @@ h2 {
     max-width: 400px;
 }
 
+.mirror-servers p {
+    text-align: center !important;
+}
+
 .server-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -261,24 +269,74 @@ h2 {
     background: rgba(255, 202, 40, 0.1);
     border: 1px solid rgba(255, 202, 40, 0.3);
     color: #ffca28;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 14px 20px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
+    font-weight: 800;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     transition: all 0.3s ease;
     text-align: center;
+    position: relative;
+    box-shadow: 0 4px 0 rgba(255, 202, 40, 0.2);
 }
 
 .mirror-btn:hover {
     background: #ffca28;
     color: #080c13;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 202, 40, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 202, 40, 0.4), 0 0 15px rgba(255, 202, 40, 0.2);
+}
+
+.mirror-btn.shake-btn {
+    animation: shake 2.5s cubic-bezier(.36,.07,.19,.97) infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    border-color: #00e5ff;
+    color: #00e5ff;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.btn-floating-telegram {
+    position: fixed;
+    bottom: 100px; /* Above the sticky ad */
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #0088cc;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 136, 204, 0.5);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: pulse 2s infinite;
+}
+
+.btn-floating-telegram:hover {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 15px 35px rgba(0, 136, 204, 0.7);
+}
+
+.native-ad-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    text-align: center;
 }
 
 .mirror-btn svg {
