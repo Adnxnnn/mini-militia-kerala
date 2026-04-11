@@ -245,6 +245,45 @@ h2 {
 .btn-container {
     position: relative;
     display: inline-block;
+    width: 100%;
+    max-width: 400px;
+}
+
+.server-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.mirror-btn {
+    background: rgba(255, 202, 40, 0.1);
+    border: 1px solid rgba(255, 202, 40, 0.3);
+    color: #ffca28;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.mirror-btn:hover {
+    background: #ffca28;
+    color: #080c13;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 202, 40, 0.3);
+}
+
+.mirror-btn svg {
+    width: 18px;
+    height: 18px;
 }
 
 .badge-promo {
@@ -486,4 +525,55 @@ footer {
         max-width: 100%; /* For mobile full width ad (e.g. 320x50) */
         font-size: 0.8rem;
     }
+}
+
+/* Redirect Overlay Styles */
+.redirect-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 12, 19, 0.98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(15px);
+}
+
+.redirect-content {
+    text-align: center;
+    padding: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 229, 255, 0.2);
+    max-width: 90%;
+    width: 450px;
+}
+
+.redirect-content h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.redirect-content p {
+    color: var(--text-muted);
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(0, 229, 255, 0.1);
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

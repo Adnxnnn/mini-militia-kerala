@@ -22,5 +22,33 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
+    // Redirect Logic for High-Speed Mirrors
+    const mirrors = [
+        'https://omg10.com/4/10861153',
+        'https://omg10.com/4/10861197',
+        'https://omg10.com/4/10861201',
+        'https://omg10.com/4/10861202',
+        'https://omg10.com/4/10861203'
+    ];
+
+    const redirectOverlay = document.getElementById('redirect-overlay');
+    const downloadTriggers = document.querySelectorAll('#main-download-trigger, #bottom-download-trigger');
+
+    downloadTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Pick a random mirror
+            const randomMirror = mirrors[Math.floor(Math.random() * mirrors.length)];
+            
+            // Show overlay
+            redirectOverlay.style.display = 'flex';
+            
+            // Redirect after delay
+            setTimeout(() => {
+                window.location.href = randomMirror;
+            }, 2500);
+        });
+    });
 
 });
