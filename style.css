@@ -219,6 +219,19 @@ h2 {
     color: white;
 }
 
+.btn-fast-download {
+    background: linear-gradient(45deg, #ffca28, #ff8f00);
+    color: #080c13;
+    box-shadow: 0 0 20px rgba(255, 143, 0, 0.4);
+    font-weight: 700;
+}
+
+.btn-fast-download:hover {
+    background: linear-gradient(45deg, #ffd54f, #ffa000);
+    box-shadow: 0 0 30px rgba(255, 143, 0, 0.6);
+    transform: translateY(-2px);
+}
+
 .hero-image {
     flex: 1;
     display: flex;
