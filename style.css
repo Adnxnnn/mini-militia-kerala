@@ -220,16 +220,62 @@ h2 {
 }
 
 .btn-fast-download {
-    background: linear-gradient(45deg, #ffca28, #ff8f00);
+    background: linear-gradient(45deg, #ffca28, #ff8f00, #ffca28);
+    background-size: 200% auto;
     color: #080c13;
-    box-shadow: 0 0 20px rgba(255, 143, 0, 0.4);
-    font-weight: 700;
+    box-shadow: 0 0 25px rgba(255, 143, 0, 0.5);
+    font-weight: 800;
+    font-size: 1.3rem;
+    padding: 18px 40px;
+    animation: shine 3s linear infinite, fastPulse 2s infinite;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-fast-download:hover {
-    background: linear-gradient(45deg, #ffd54f, #ffa000);
-    box-shadow: 0 0 30px rgba(255, 143, 0, 0.6);
-    transform: translateY(-2px);
+    background: linear-gradient(45deg, #ffd54f, #ffa000, #ffd54f);
+    box-shadow: 0 0 40px rgba(255, 143, 0, 0.8);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.btn-container {
+    position: relative;
+    display: inline-block;
+}
+
+.badge-promo {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background: #ff4757;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+    letter-spacing: 1px;
+    animation: bounceScale 2s infinite;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+@keyframes fastPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounceScale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1) rotate(5deg); }
 }
 
 .hero-image {
